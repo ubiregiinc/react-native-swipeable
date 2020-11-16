@@ -1,89 +1,11 @@
 /* eslint-disable import/no-unresolved, import/extensions */
 import React, {PureComponent} from 'react';
-import {Animated, Easing, PanResponder, StyleSheet, View, ViewPropTypes} from 'react-native';
-import {PropTypes} from 'prop-types';
+import {Animated, Easing, PanResponder, StyleSheet, View} from 'react-native';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 function noop() {}
 
 export default class Swipeable extends PureComponent {
-
-  static propTypes = {
-    // elements
-    children: PropTypes.any,
-    leftContent: PropTypes.any,
-    rightContent: PropTypes.any,
-    leftButtons: PropTypes.array,
-    rightButtons: PropTypes.array,
-
-    // left action lifecycle
-    onLeftActionActivate: PropTypes.func,
-    onLeftActionDeactivate: PropTypes.func,
-    onLeftActionRelease: PropTypes.func,
-    onLeftActionComplete: PropTypes.func,
-    leftActionActivationDistance: PropTypes.number,
-    leftActionReleaseAnimationFn: PropTypes.func,
-    leftActionReleaseAnimationConfig: PropTypes.object,
-
-    // right action lifecycle
-    onRightActionActivate: PropTypes.func,
-    onRightActionDeactivate: PropTypes.func,
-    onRightActionRelease: PropTypes.func,
-    onRightActionComplete: PropTypes.func,
-    rightActionActivationDistance: PropTypes.number,
-    rightActionReleaseAnimationFn: PropTypes.func,
-    rightActionReleaseAnimationConfig: PropTypes.object,
-
-    // left buttons lifecycle
-    onLeftButtonsActivate: PropTypes.func,
-    onLeftButtonsDeactivate: PropTypes.func,
-    onLeftButtonsOpenRelease: PropTypes.func,
-    onLeftButtonsOpenComplete: PropTypes.func,
-    onLeftButtonsCloseRelease: PropTypes.func,
-    onLeftButtonsCloseComplete: PropTypes.func,
-    leftButtonWidth: PropTypes.number,
-    leftButtonsActivationDistance: PropTypes.number,
-    leftButtonsOpenReleaseAnimationFn: PropTypes.func,
-    leftButtonsOpenReleaseAnimationConfig: PropTypes.object,
-    leftButtonsCloseReleaseAnimationFn: PropTypes.func,
-    leftButtonsCloseReleaseAnimationConfig: PropTypes.object,
-
-    // right buttons lifecycle
-    onRightButtonsActivate: PropTypes.func,
-    onRightButtonsDeactivate: PropTypes.func,
-    onRightButtonsOpenRelease: PropTypes.func,
-    onRightButtonsOpenComplete: PropTypes.func,
-    onRightButtonsCloseRelease: PropTypes.func,
-    onRightButtonsCloseComplete: PropTypes.func,
-    rightButtonWidth: PropTypes.number,
-    rightButtonsActivationDistance: PropTypes.number,
-    rightButtonsOpenReleaseAnimationFn: PropTypes.func,
-    rightButtonsOpenReleaseAnimationConfig: PropTypes.object,
-    rightButtonsCloseReleaseAnimationFn: PropTypes.func,
-    rightButtonsCloseReleaseAnimationConfig: PropTypes.object,
-
-    // base swipe lifecycle
-    onSwipeStart: PropTypes.func,
-    onSwipeMove: PropTypes.func,
-    onSwipeRelease: PropTypes.func,
-    onSwipeComplete: PropTypes.func,
-    swipeReleaseAnimationFn: PropTypes.func,
-    swipeReleaseAnimationConfig: PropTypes.object,
-
-    // misc
-    onRef: PropTypes.func,
-    onPanAnimatedValueRef: PropTypes.func,
-    swipeStartMinDistance: PropTypes.number,
-
-    // styles
-    style: ViewPropTypes.style,
-    leftContainerStyle: ViewPropTypes.style,
-    leftButtonContainerStyle: ViewPropTypes.style,
-    rightContainerStyle: ViewPropTypes.style,
-    rightButtonContainerStyle: ViewPropTypes.style,
-    contentContainerStyle: ViewPropTypes.style
-  };
-
   static defaultProps = {
     leftContent: null,
     rightContent: null,
